@@ -1,3 +1,11 @@
+pyhonanywhere
+anup30
+anup30coc@gmail.com
+mppyhonanywhere
+
+in mppyhonanywhere bash:
+mkvirtualenv django-venv --python=python3.10
+
 pythonanywhere upload process:
 followerd https://www.youtube.com/watch?v=5aEUOam1GTE&list=PLJh8Hi_cW8DZzzjC0tBLqhgPTv2NBlnCc&index=29&t=733s
 
