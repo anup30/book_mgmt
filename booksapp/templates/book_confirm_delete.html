@@ -1,0 +1,16 @@
+<!-- template to confirm the deletion of a book -->
+{% extends 'base.html' %}
+
+{% block title %}Delete {{ book.title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+	<h1>Delete Book</h1>
+	<p>Are you sure you want to delete <strong>{{ book.title }}</strong> by <strong>{{ book.author }}</strong>?</p>
+	<form method="post">
+		{% csrf_token %}
+		<button type="submit" class="btn btn-danger">Yes, Delete</button>
+		<a href="{% url 'book_list' %}" class="btn btn-secondary">Cancel</a>
+	</form>
+</div>
+{% endblock %}

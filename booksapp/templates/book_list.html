@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Book List{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Book List</h1>
+    <!-- <a href="{% url 'book_create' %}" class="btn btn-primary mb-3">Add New Book</a> --> <!-- duplicate -->
+    <div class="row">
+        {% for book in books %}
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ book.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ book.author }}</h6>
+                    <p class="card-text">{{ book.description|truncatechars:50 }}</p>
+                    <p class="card-text"><small class="text-muted">Published: {{ book.published_year }}</small></p>
+                    <!-- <p class="card-text"><small class="text-muted">ISBN: {{ book.isbn }}</small></p> -->
+                    <a href="{% url 'book_detail' book.pk %}" class="btn btn-info btn-sm">Details</a>
+                    <a href="{% url 'book_edit' book.pk %}" class="btn btn-primary btn-sm m-2">Edit</a>
+                    <a href="{% url 'book_delete' book.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+<!-- below done in table -->
+<!-- 
+<h2>Book List</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Published Date</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for book in books %}
+			<tr>
+				<td><h6>{{ book.title }}</h6></td>
+				<td>{{ book.author }}</td>
+				<td>{{ book.published_year }}</td>
+				<td>
+					<a href="{% url 'book_detail' book.pk %}" class="btn btn-sm btn-info">details</a>
+					<a href="{% url 'book_edit' book.pk %}" class="btn btn-sm btn-warning">Edit</a>
+					<a href="{% url 'book_delete' book.pk %}" class="btn btn-sm btn-danger">Delete</a>
+				</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<a href="{% url 'book_create' %}" class="btn btn-primary">Add New Book</a>
+-->

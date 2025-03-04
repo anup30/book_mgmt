@@ -1,0 +1,131 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+# Usually these files are written by a python script from a template
+# before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+db.sqlite3
+db.sqlite3-journal
+*.db
+*.sqlite3
+*.sqlite3-journal
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+media/
+static/
+local/
+staticfiles/
+*.swp
+*.bak
+*.tmp
+*.temp
+*~
+*#
+.DS_Store
+.gitkeep
+.env
+.env*
+venv/
+static/
+migrations/
+*.py[cod]
+*$py.class
+*.json
+*.lock
+*.log
+*.pydevproject
+.settings/
+.project
+.idea/
+.vscode/
+*.sublime*
+*.sublime-*
+*.sublime-session
+*.sublime-workspace
+*.sass-cache
+*.scssc
+node_modules/
+npm-debug.log
+yarn-error.log
+*.pem
+*.key
+*.crt
+*.keychain
+*.iml
+*.ipch/
+*.vcxproj
+*.sln
+*.user
+*.suo
+*.vcxproj.user
+*.vcxproj.filters
+*.builds
+*.pid
+*.log
+
+# OS generated files:
+.DS_Store
+Thumbs.db
+.Spotlight-V100
+.AppleDouble
+.LSOverride
+
+# Environment variables
+.env
+
+# Other
+*.pyc
+*.pyo
+*.pyd
+*~
+.idea/
+.vscode/

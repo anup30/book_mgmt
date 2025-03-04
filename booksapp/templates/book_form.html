@@ -1,0 +1,76 @@
+<!-- template for adding and editing books -->
+{% extends 'base.html' %}
+
+{% block title %}
+	{% if form.instance.pk %}Edit Book{% else %}Add New Book{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<h2>{% if form.instance.pk %}Edit Book{% else %}Add New Book{% endif %}</h2>
+	<form method="post" id="bookForm">
+		{% csrf_token %}
+
+		<!-- <div class="mb-3">
+			{{ form.title.label_tag }}
+			{{ form.title }}
+			{% if form.title.errors %}
+				<div class="text-danger">{{ form.title.errors }}</div>
+			{% endif %}
+		</div>
+		<div class="mb-3">
+			{{ form.author.label_tag }}
+			{{ form.author }}
+			{% if form.author.errors %}
+				<div class="text-danger">{{ form.author.errors }}</div>
+			{% endif %}
+		</div>
+		<div class="mb-3">
+			{{ form.description.label_tag }}
+			{{ form.description }}
+			{% if form.description.errors %}
+				<div class="text-danger">{{ form.description.errors }}</div>
+			{% endif %}
+		</div>
+		<div class="mb-3">
+			{{ form.published_year.label_tag }}
+			{{ form.published_year }}
+			{% if form.published_year.errors %}
+				<div class="text-danger">{{ form.published_year.errors }}</div>
+			{% endif %}
+		</div> -->
+		
+		{% for field in form %}
+			<div class="mb-3">
+				<label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}:</label><br>
+				{{ field }}<br>					
+				{% if field.errors %}
+				<div class="invalid-feedback">{{ field.errors }}</div>
+				{% endif %}
+			</div>
+		{% endfor %}
+		<button type="submit" class="btn btn-primary">
+			{% if form.instance.pk %}Update{% else %}Add{% endif %} Book
+		</button>
+		<a href="{% url 'book_list' %}" class="btn btn-secondary">Cancel</a>
+	</form>
+</div>
+<script>
+	// js to validate the form
+	document.getElementById('bookForm').addEventListener('submit', function(event) {
+		let isValid = true;
+		const fields = document.querySelectorAll('#bookForm input, #bookForm textarea');	
+		fields.forEach(field => {
+			if (field.value.trim() === '') {
+				isValid = false;
+				alert(`"${field.labels[0].innerText}" cannot be empty!`);
+				field.focus(); // Focus on the empty field
+				return; // Stop checking further fields
+			}
+		});	
+		if (!isValid) {
+			event.preventDefault(); // Prevent form submission if any field is empty
+		}
+	});
+</script>
+{% endblock %}
