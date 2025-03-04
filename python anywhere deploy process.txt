@@ -1,0 +1,28 @@
+pythonanywhere upload process:
+followerd https://www.youtube.com/watch?v=5aEUOam1GTE&list=PLJh8Hi_cW8DZzzjC0tBLqhgPTv2NBlnCc&index=29&t=733s
+
+before pushing project to github, generate requirements.txt:
+pip freeze > requirements.txt
+include the db.sqlite3 file also to git
+copy github repo link to clone. https://github.com/anup30/book_mgmt.git
+
+in pythonanywhere bash: git cone 'paste link'
+mkvirtualenv venv
+pwd (present working directory)
+ls (show files in current working directory)
+
+cd book_mgmt (go to project folder directory)
+
+pip install -r requirements.txt
+
+
+now go to web section: click add a new web app button:
+next > manual configuration > Python 3.10 > next :
+set Virtualenv: venv
+open in new tab, WSGI configuration file: uncomment the django section
+set the manage.py ans settings.py location there. save. go back
+
+files tab: navigate to settings.py from left pane. set my domain: ALLOWED_HOSTS = ['anup30.pythonanywhere.com']  save.
+
+web tab > reload anup30.pythonanywhere.com > 
+
