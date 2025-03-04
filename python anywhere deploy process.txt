@@ -26,3 +26,20 @@ files tab: navigate to settings.py from left pane. set my domain: ALLOWED_HOSTS 
 
 web tab > reload anup30.pythonanywhere.com > 
 
+site at : https://anup30.pythonanywhere.com/
+
+https://anup30.pythonanywhere.com/admin
+admin panel broken ui(css) fix:
+in setting.py:
+import os
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+Pythonanywhere the Web tab:
+static files:
+url: /static/
+directory: /home/anup30/book_mgmt/booksapp/static
+
+in pythonanywhere bash run:
+python manage.py collectstatic
+
